@@ -194,6 +194,6 @@ This will:
 
 ---
 
-## 📄 License
 
-MIT © Priyanshu Pramanik
+
+
