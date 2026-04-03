@@ -37,10 +37,10 @@ export const aboutText = {
     "I thrive at the intersection of engineering and problem-solving: designing systems that are clean, performant, and production-ready from day one.",
   ],
   highlights: [
-    { label: 'Projects Built', value: '10+' },
+    { label: 'Projects Built', value: '5+' },
     { label: 'Tech Stacks', value: '8+' },
     { label: 'Automation Flows', value: '15+' },
-    { label: 'Lines of Code', value: '50K+' },
+    { label: 'Lines of Code', value: '10K+' },
   ],
 };
 
@@ -57,20 +57,24 @@ export const skillCategories = [
       'REST API Design',
       'HTML5 / CSS3 / Tailwind',
       'Git & GitHub',
+      'MVC Architecture',
+      'Algorithms & Data Structures',
+      'SQL Security',
+      'MS Excel',
     ],
   },
   {
     title: 'Operations & Automation',
     icon: Workflow,
     skills: [
-      'CI/CD Pipelines',
-      'Workflow Automation',
+      'Workflow Design',
+      'Process Automation',
+      'Lead Generation',
+      'SaaS Tool Integration (Apollo, Clay, Thunderbird)',
       'Data Cleaning & ETL',
-      'Web Scraping',
-      'Email Automation',
-      'Lead Generation Systems',
-      'Task Scheduling',
-      'Process Optimization',
+      'Structured Data Handling',
+      'Business Process Optimization',
+      'Email Campaign Automation',
     ],
   },
   {
@@ -80,11 +84,11 @@ export const skillCategories = [
       'System Architecture',
       'Problem Solving',
       'Technical Documentation',
-      'Agile / Scrum',
-      'Team Collaboration',
-      'Project Management',
+      'Business Process Mapping',
+      'Requirements Gathering',
       'API Integration',
-      'Security Best Practices',
+      'Stakeholder Communication',
+      'Cross-functional Collaboration',
     ],
   },
 ];
@@ -105,7 +109,7 @@ export const projects = [
       'RESTful API with input validation and error handling',
       'Responsive UI with dark/light mode support',
     ],
-    github: 'https://github.com/Alexisontheway',
+    github: 'https://github.com/Alexisontheway/Daily-Task-App',
     demo: null,
     featured: true,
     category: 'fullstack',
@@ -121,8 +125,8 @@ export const projects = [
     features: [
       'Automated duplicate detection and removal',
       'Format validation for emails, phones, and dates',
-      'Configurable cleaning rules via YAML configs',
-      'Detailed cleaning reports with before/after metrics',
+      'Business-rule validation checks for schema consistency',
+      'Structured Excel reports for stakeholder review',
       'Batch processing for large-scale datasets',
     ],
     github: 'https://github.com/Alexisontheway',
@@ -133,15 +137,15 @@ export const projects = [
   {
     id: 3,
     title: 'AnalyseThis',
-    subtitle: 'AI-Powered Sales Intelligence',
+    subtitle: 'AI-Powered Research & Reporting Assistant',
     description:
-      'An AI-driven sales copilot that automates company research and prospect analysis. Leverages AI models and LinkedIn data to generate actionable sales intelligence, enabling faster and more informed outreach strategies.',
+      'A multi-source aggregation tool that organizes research findings into traceable, structured reports with proper sourcing and formatting. Leverages AI models to generate actionable intelligence for faster and more informed decision-making.',
     impact: 'Automated 70% of manual prospect research, delivering insights in seconds instead of hours.',
     techStack: ['Python', 'OpenAI API', 'Web Scraping', 'Data Analysis', 'REST API'],
     features: [
+      'Multi-source data aggregation and enrichment',
       'AI-powered company and prospect profiling',
-      'LinkedIn data extraction and enrichment',
-      'Automated competitive analysis reports',
+      'Traceable structured reports with proper sourcing',
       'Natural language query interface',
       'Export-ready intelligence summaries',
     ],
@@ -174,33 +178,33 @@ export const projects = [
 
 export const experience = [
   {
-    role: 'Web Development & Automation Intern',
+    role: 'Technical Intern (AI & Technical Writing Operations)',
     company: 'GAOTek Inc.',
     location: 'Remote — New York, USA',
-    period: 'Jan 2025 – Present',
+    period: 'August 2025 – November 2025',
     type: 'Internship',
     description:
-      'Driving automation initiatives and building systems that streamline lead generation, data workflows, and internal operations.',
+      'Handled AI-assisted technical writing, product documentation, and lead generation operations across automation and SaaS workflows.',
     achievements: [
-      'Designed and deployed automated lead generation systems, increasing qualified leads by 40%',
-      'Built data validation pipelines that reduced manual processing time by 60%',
-      'Developed workflow automation tools handling 500+ daily operations',
-      'Implemented web scraping solutions for competitive market analysis',
-      'Created standardized templates and SOPs for team productivity',
+      'Documented 120+ products (4–5 daily) with detailed specifications, supplier links, and feature descriptions into a standardized internal database',
+      'Designed a repeatable product documentation workflow that reduced manual entry errors and improved data organization',
+      'Generated 100+ qualified leads daily using Apollo and Clay, maintaining database accuracy for follow-up',
+      'Built and executed automated email outreach campaigns using Apollo and Thunderbird for scalable lead engagement',
+      'Integrated multiple SaaS tools (Apollo, Clay, Thunderbird) to create a unified lead generation pipeline',
     ],
   },
 ];
 
 export const certifications = [
   {
-    title: 'CS50 — Introduction to Artificial Intelligence with Python',
+    title: "CS50's Introduction to Artificial Intelligence with Python",
     issuer: 'HarvardX (edX)',
     year: '2024',
     icon: Brain,
     color: 'from-blue-500 to-purple-600',
   },
   {
-    title: 'CS50 — Introduction to Programming with Python',
+    title: "CS50's Introduction to Programming with Python",
     issuer: 'HarvardX (edX)',
     year: '2024',
     icon: Code2,
@@ -219,9 +223,10 @@ export const education = [
   {
     degree: 'Bachelor of Technology (B.Tech)',
     field: 'Computer Science & Engineering',
-    institution: 'Narula Institute of Technology',
+    institution: 'Swami Vivekananda University',
     location: 'Kolkata, India',
-    period: '2023 – 2027 (Expected)',
+    period: '2024 – 2027 (Expected)',
+    grade: 'CGPA: 8.17 / 10',
     type: 'Undergraduate',
   },
   {
@@ -229,7 +234,8 @@ export const education = [
     field: 'Computer Science & Technology',
     institution: 'Government Polytechnic Khutri',
     location: 'Khutri, India',
-    period: '2020 – 2023',
+    period: '2021 – 2024',
+    grade: 'Distinction',
     type: 'Diploma',
   },
 ];
