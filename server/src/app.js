@@ -7,6 +7,11 @@ import contactRoutes from './routes/contactRoutes.js';
 const app = express();
 
 // ---------------------
+// Trust Proxy (Required for Render)
+// ---------------------
+app.set('trust proxy', 1);
+
+// ---------------------
 // Security Middleware
 // ---------------------
 app.use(helmet());
@@ -23,11 +28,14 @@ app.use(
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
+        console.log('Blocked by CORS:', origin);
+        console.log('Allowed origins:', allowedOrigins);
         callback(new Error('Not allowed by CORS'));
       }
     },
-    methods: ['GET', 'POST'],
+    methods: ['GET', 'POST', 'OPTIONS'],
     allowedHeaders: ['Content-Type'],
+    credentials: true,
   })
 );
 
