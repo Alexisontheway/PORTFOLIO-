@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { useState } from "react";
+import { motion } from "framer-motion";
 import {
   Send,
   Mail,
@@ -11,27 +11,27 @@ import {
   CheckCircle2,
   AlertCircle,
   Loader2,
-} from 'lucide-react';
-import SectionHeading from '../components/SectionHeading';
-import { personalInfo } from '../data/portfolioData';
-import { submitContactForm } from '../utils/api';
+} from "lucide-react";
+import SectionHeading from "../components/SectionHeading";
+import { personalInfo } from "../data/portfolioData";
+import { submitContactForm } from "../utils/api";
 
 const contactLinks = [
   {
     icon: Mail,
-    label: 'Email',
+    label: "Email",
     value: personalInfo.email,
     href: `mailto:${personalInfo.email}`,
   },
   {
     icon: Phone,
-    label: 'Phone',
+    label: "Phone",
     value: personalInfo.phone,
     href: `tel:${personalInfo.phone}`,
   },
   {
     icon: MapPin,
-    label: 'Location',
+    label: "Location",
     value: personalInfo.location,
     href: null,
   },
@@ -40,20 +40,24 @@ const contactLinks = [
 const socialLinks = [
   {
     icon: GitBranch,
-    label: 'GitHub',
+    label: "GitHub",
     href: personalInfo.github,
   },
   {
     icon: ExternalLink,
-    label: 'LinkedIn',
+    label: "LinkedIn",
     href: personalInfo.linkedin,
   },
 ];
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [status, setStatus] = useState('idle'); // idle, loading, success, error
-  const [errorMessage, setErrorMessage] = useState('');
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [status, setStatus] = useState("idle"); // idle, loading, success, error
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -61,18 +65,20 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus('loading');
-    setErrorMessage('');
+    setStatus("loading");
+    setErrorMessage("");
 
     try {
       await submitContactForm(formData);
-      setStatus('success');
-      setFormData({ name: '', email: '', message: '' });
-      setTimeout(() => setStatus('idle'), 5000);
+      setStatus("success");
+      setFormData({ name: "", email: "", message: "" });
+      setTimeout(() => setStatus("idle"), 5000);
     } catch (err) {
-      setStatus('error');
-      setErrorMessage(err.message || 'Failed to send message. Please try again.');
-      setTimeout(() => setStatus('idle'), 5000);
+      setStatus("error");
+      setErrorMessage(
+        err.message || "Failed to send message. Please try again.",
+      );
+      setTimeout(() => setStatus("idle"), 5000);
     }
   };
 
@@ -91,7 +97,7 @@ export default function Contact() {
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
             className="lg:col-span-2 space-y-8"
           >
@@ -100,8 +106,9 @@ export default function Contact() {
                 Let's build something great together.
               </h3>
               <p className="text-slate-500 dark:text-slate-400 leading-relaxed">
-                Whether you need a full-stack application, automation pipeline, or just want to chat
-                about engineering — I'm always up for a good conversation.
+                Whether you need a full-stack application, automation pipeline,
+                or just want to chat about engineering — I'm always up for a
+                good conversation.
               </p>
             </div>
 
@@ -151,7 +158,7 @@ export default function Contact() {
 
             {/* Resume download */}
             <a
-              href={personalInfo.resumeUrl}
+              href="/resume.pdf"
               download
               className="outline-btn inline-flex text-sm"
             >
@@ -164,11 +171,14 @@ export default function Contact() {
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="lg:col-span-3"
           >
-            <form onSubmit={handleSubmit} className="glass-card p-6 sm:p-8 space-y-6">
+            <form
+              onSubmit={handleSubmit}
+              className="glass-card p-6 sm:p-8 space-y-6"
+            >
               {/* Name */}
               <div>
                 <label
@@ -232,10 +242,10 @@ export default function Contact() {
               {/* Submit button */}
               <button
                 type="submit"
-                disabled={status === 'loading'}
+                disabled={status === "loading"}
                 className="w-full glow-btn justify-center text-base disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                {status === 'loading' ? (
+                {status === "loading" ? (
                   <>
                     <Loader2 size={18} className="animate-spin" />
                     Sending...
@@ -249,7 +259,7 @@ export default function Contact() {
               </button>
 
               {/* Status messages */}
-              {status === 'success' && (
+              {status === "success" && (
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -260,7 +270,7 @@ export default function Contact() {
                 </motion.div>
               )}
 
-              {status === 'error' && (
+              {status === "error" && (
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}

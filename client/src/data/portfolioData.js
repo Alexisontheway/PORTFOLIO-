@@ -110,7 +110,7 @@ export const projects = [
       'Responsive UI with dark/light mode support',
     ],
     github: 'https://github.com/Alexisontheway/Daily-Task-App',
-    demo: null,
+    demo: 'https://donotdothethings.netlify.app/',
     featured: true,
     category: 'fullstack',
   },
@@ -174,13 +174,39 @@ export const projects = [
     featured: false,
     category: 'automation',
   },
+  {
+  id: 5,
+  title: 'Movie Search Web App',
+  subtitle: 'React Movie Discovery Platform',
+  description:
+    'A responsive movie discovery application built with React that allows users to search, explore, and view detailed information about movies using real-time API integration.',
+
+  impact:
+    'Built a real-time movie search system with API integration, improving user interaction through instant search results and optimized rendering.',
+
+  techStack: ['React', 'JavaScript', 'CSS', 'REST API'],
+
+  features: [
+    'Real-time movie search with API integration',
+    'Dynamic rendering of movie details and posters',
+    'Responsive UI for seamless experience across devices',
+    'Efficient state management using React hooks',
+    'Clean and intuitive user interface design',
+  ],
+
+  github: 'https://github.com/Alexisontheway/movie_website',
+  demo: 'https://69d9cc672ba1e673dc7648fb--iwanttowatch.netlify.app/',
+
+  featured: true,
+  category: 'frontend',
+}
 ];
 
 export const experience = [
   {
     role: 'Technical Intern (AI & Technical Writing Operations)',
     company: 'GAOTek Inc.',
-    location: 'Remote — New York, USA',
+    location: 'Remote — Kolkata, India',
     period: 'August 2025 – November 2025',
     type: 'Internship',
     description:
