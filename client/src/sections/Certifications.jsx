@@ -1,53 +1,41 @@
-import { motion } from 'framer-motion';
-import { Award } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading';
 import { certifications } from '../data/portfolioData';
 
-function CertCard({ cert, index }) {
-  const Icon = cert.icon || Award;
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-50px' }}
-      transition={{ delay: index * 0.1, duration: 0.5 }}
-      className="glass-card p-6 group hover:scale-[1.02] transition-transform duration-300"
-    >
-      {/* Icon with gradient */}
-      <div
-        className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${cert.color} mb-4`}
-      >
-        <Icon size={24} className="text-white" />
-      </div>
-
-      <h3 className="font-heading text-lg font-semibold text-slate-800 dark:text-white leading-snug">
-        {cert.title}
-      </h3>
-
-      <div className="mt-3 flex items-center justify-between">
-        <p className="text-sm text-slate-500 dark:text-slate-400">{cert.issuer}</p>
-        <span className="text-xs font-medium px-2.5 py-1 rounded-md bg-slate-100 dark:bg-white/[0.04] text-slate-500 dark:text-slate-400">
-          {cert.year}
-        </span>
-      </div>
-    </motion.div>
-  );
-}
-
 export default function Certifications() {
   return (
-    <section id="certifications" className="relative py-24 lg:py-32">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          title="Certifications"
-          subtitle="Validated expertise from leading institutions"
-        />
+    <section className="py-24 relative">
+      <div className="max-w-6xl mx-auto px-6">
+        <SectionHeading number="06" title="Certifications" />
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {certifications.map((cert, i) => (
-            <CertCard key={cert.title} cert={cert} index={i} />
-          ))}
+        <div className="grid md:grid-cols-3 gap-6">
+          {certifications.map((cert, i) => {
+            const Icon = cert.icon;
+            return (
+              <div
+                key={i}
+                className="border border-neon/10 bg-dark-800/20 p-8 hover:border-neon/30 transition-all duration-500 group relative overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-b from-neon/3 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                <div className="relative z-10">
+                  <div className="w-12 h-12 border border-neon/20 flex items-center justify-center text-neon mb-6 group-hover:bg-neon group-hover:text-dark-900 transition-all duration-300">
+                    <Icon size={22} />
+                  </div>
+
+                  <h3 className="text-white font-semibold text-sm leading-snug mb-3">
+                    {cert.title}
+                  </h3>
+
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-500 text-xs font-mono">{cert.issuer}</span>
+                    <span className="text-neon/60 text-xs font-mono border border-neon/15 px-2 py-0.5">
+                      {cert.year}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

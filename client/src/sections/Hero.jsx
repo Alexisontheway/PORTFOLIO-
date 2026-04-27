@@ -1,127 +1,92 @@
-import { motion } from 'framer-motion';
-import { ArrowDown, ExternalLink, Send } from 'lucide-react';
+import { ArrowDown, Mail, Github, Linkedin } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
+import ParticleBackground from '../components/ParticleBackground';
 
 export default function Hero() {
   return (
-    <section
-      id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-    >
-      {/* Gradient orbs */}
-      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary-500/20 rounded-full blur-[128px] animate-float" />
-      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-accent-500/20 rounded-full blur-[128px] animate-float" style={{ animationDelay: '3s' }} />
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      <ParticleBackground />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Status badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 text-emerald-400 text-sm font-medium mb-8"
-        >
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+      <div className="max-w-5xl mx-auto px-6 text-center relative z-10">
+        {/* Status Badge */}
+        <div className="inline-flex items-center gap-2 border border-neon/20 rounded-full px-4 py-1.5 mb-8 animate-fade-in">
+          <span className="neon-dot animate-pulse" />
+          <span className="text-xs font-mono text-neon/80 uppercase tracking-widest">
+            Available for work
           </span>
-          Open to opportunities
-        </motion.div>
+        </div>
 
-        {/* Main heading */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight"
-        >
-          <span className="text-slate-800 dark:text-white">I build </span>
-          <span className="gradient-text">systems</span>
+        {/* Name */}
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mb-4 animate-slide-up">
+          <span className="text-white">{personalInfo.name.split(' ')[0]}</span>
           <br />
-          <span className="text-slate-800 dark:text-white">that </span>
-          <span className="gradient-text">scale.</span>
-        </motion.h1>
+          <span className="text-neon text-glow">{personalInfo.name.split(' ')[1]}</span>
+        </h1>
 
-        {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.25 }}
-          className="mt-6 text-lg sm:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto text-balance leading-relaxed"
+        {/* Title */}
+        <div className="mb-6 animate-slide-up" style={{ animationDelay: '0.2s', opacity: 0 }}>
+          <span className="font-mono text-neon/60 text-sm">{'<'}</span>
+          <span className="text-gray-400 font-mono text-sm md:text-base mx-2">
+            {personalInfo.title}
+          </span>
+          <span className="font-mono text-neon/60 text-sm">{'/>'}</span>
+        </div>
+
+        {/* Tagline */}
+        <p
+          className="text-gray-500 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed animate-slide-up"
+          style={{ animationDelay: '0.4s', opacity: 0 }}
         >
-          Full-Stack Developer & Automation Engineer crafting scalable web applications,
-          intelligent data pipelines, and AI-powered tools from Kolkata, India.
-        </motion.p>
+          {personalInfo.tagline}
+        </p>
 
-        {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.4 }}
-          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+        {/* CTA */}
+        <div
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 animate-slide-up"
+          style={{ animationDelay: '0.6s', opacity: 0 }}
         >
           <a
             href="#projects"
-            onClick={(e) => {
-              e.preventDefault();
-              document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
-            }}
-            className="glow-btn text-base group"
+            className="bg-neon text-dark-900 px-8 py-3 font-bold text-sm uppercase tracking-widest hover:shadow-neon-lg transition-all duration-300 flex items-center gap-2"
           >
-            <ExternalLink size={18} />
-            View Projects
+            View Projects <ArrowDown size={16} />
           </a>
           <a
             href="#contact"
-            onClick={(e) => {
-              e.preventDefault();
-              document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
-            }}
-            className="outline-btn text-base group"
+            className="border border-neon/40 text-neon px-8 py-3 text-sm uppercase tracking-widest hover:border-neon hover:shadow-neon transition-all duration-300"
           >
-            <Send size={18} />
-            Contact Me
+            Get in Touch
           </a>
-        </motion.div>
+        </div>
 
-        {/* Tech stack pills */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-16 flex flex-wrap items-center justify-center gap-3"
+        {/* Socials */}
+        <div
+          className="flex items-center justify-center gap-6 animate-slide-up"
+          style={{ animationDelay: '0.8s', opacity: 0 }}
         >
-          {['React', 'Node.js', 'Python', 'PostgreSQL', 'TypeScript', 'Docker'].map(
-            (tech, i) => (
-              <motion.span
-                key={tech}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.7 + i * 0.08 }}
-                className="px-3 py-1.5 text-xs font-medium rounded-lg bg-white/60 dark:bg-white/[0.04] text-slate-500 dark:text-slate-500 border border-slate-200/50 dark:border-white/[0.06]"
-              >
-                {tech}
-              </motion.span>
-            )
-          )}
-        </motion.div>
+          {[
+            { icon: Github, href: personalInfo.github },
+            { icon: Linkedin, href: personalInfo.linkedin },
+            { icon: Mail, href: `mailto:${personalInfo.email}` },
+          ].map(({ icon: Icon, href }, i) => (
+            <a
+              key={i}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-neon transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(234,255,0,0.5)]"
+            >
+              <Icon size={20} />
+            </a>
+          ))}
+        </div>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-          className="flex flex-col items-center gap-2 text-slate-400 dark:text-slate-600"
-        >
-          <span className="text-xs font-medium uppercase tracking-widest">Scroll</span>
-          <ArrowDown size={16} />
-        </motion.div>
-      </motion.div>
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+        <span className="text-[10px] font-mono text-neon/40 uppercase tracking-widest">Scroll</span>
+        <div className="w-px h-8 bg-gradient-to-b from-neon/40 to-transparent" />
+      </div>
     </section>
   );
 }

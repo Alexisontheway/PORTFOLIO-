@@ -1,21 +1,24 @@
-import { useEffect, useState } from 'react';
-import { motion, useScroll, useSpring } from 'framer-motion';
+import { useState, useEffect } from 'react';
 
 export default function ScrollProgress() {
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  });
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      const current = window.scrollY;
+      setProgress(total > 0 ? (current / total) * 100 : 0);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <motion.div
-      className="fixed top-0 left-0 right-0 h-[3px] z-[60] origin-left"
-      style={{
-        scaleX,
-        background: 'linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4)',
-      }}
-    />
+    <div className="fixed top-0 left-0 w-full h-[2px] z-[100]">
+      <div
+        className="h-full bg-neon shadow-neon transition-all duration-150"
+        style={{ width: `${progress}%` }}
+      />
+    </div>
   );
 }

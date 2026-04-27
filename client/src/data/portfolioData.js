@@ -37,10 +37,10 @@ export const aboutText = {
     "I thrive at the intersection of engineering and problem-solving: designing systems that are clean, performant, and production-ready from day one.",
   ],
   highlights: [
-    { label: 'Projects Built', value: '5+' },
+    { label: 'Projects Built', value: '10+' },
     { label: 'Tech Stacks', value: '8+' },
     { label: 'Automation Flows', value: '15+' },
-    { label: 'Lines of Code', value: '10K+' },
+    { label: 'Lines of Code', value: '50K+' },
   ],
 };
 
@@ -96,6 +96,29 @@ export const skillCategories = [
 export const projects = [
   {
     id: 1,
+    title: 'Movie Recommender',
+    subtitle: 'AI-Powered Movie Discovery Platform',
+    description:
+      'A full-stack movie recommendation platform that combines Machine Learning with real-time TMDB integration to help users discover movies they\'ll actually enjoy. Features a hybrid ML engine processing 4,800+ movies using TF-IDF vectorization and cosine similarity, a 5-question personality quiz, user accounts with watchlist/favorites/ratings, and access to 800,000+ movies via TMDB.',
+    impact: 'Hybrid ML + TMDB engine delivering personalized recommendations across 800,000+ movies with cosine similarity scoring, 100-point quiz algorithm, and real-time enrichment.',
+    techStack: ['React', 'Node.js', 'Express', 'FastAPI', 'Python', 'scikit-learn', 'PostgreSQL', 'TMDB API', 'JWT Auth', 'Vercel', 'Render'],
+    features: [
+      'ML content-based filtering using TF-IDF & Cosine Similarity on 4,800+ movies with TMDB enrichment',
+      'Hybrid recommendation engine combining ML similarity scores with TMDB similar movies API',
+      '5-question personality quiz with 100-point scoring algorithm (genre 50pts, rating 20pts, era 15pts)',
+      'Full movie detail pages with YouTube trailers, cast photos, where to watch, and budget/revenue',
+      'JWT authentication with watchlist, favorites, star ratings, and "Recommend from Favorites" feature',
+      'Real-time global search across 800,000+ movies with debounced instant dropdown results',
+      'Multi-movie mode: pick up to 5 movies for combined AI-powered suggestions',
+      'Microservices architecture deployed across Vercel (frontend), Render (backend + ML), and Neon (PostgreSQL)',
+    ],
+    github: 'https://github.com/Alexisontheway/movie-recommender',
+    demo: 'https://movie-recommender-ten-weld.vercel.app',
+    featured: true,
+    category: 'ai',
+  },
+  {
+    id: 2,
     title: 'Daily Task App',
     subtitle: 'Full-Stack Productivity Platform',
     description:
@@ -110,12 +133,12 @@ export const projects = [
       'Responsive UI with dark/light mode support',
     ],
     github: 'https://github.com/Alexisontheway/Daily-Task-App',
-    demo: 'https://donotdothethings.netlify.app/',
+    demo: null,
     featured: true,
     category: 'fullstack',
   },
   {
-    id: 2,
+    id: 3,
     title: 'Intelligent Data Cleaning Tool',
     subtitle: 'Automated Data Pipeline',
     description:
@@ -135,7 +158,7 @@ export const projects = [
     category: 'automation',
   },
   {
-    id: 3,
+    id: 4,
     title: 'AnalyseThis',
     subtitle: 'AI-Powered Research & Reporting Assistant',
     description:
@@ -154,59 +177,13 @@ export const projects = [
     featured: true,
     category: 'ai',
   },
-  {
-    id: 4,
-    title: 'AI-Assisted Automation Toolkit',
-    subtitle: 'Reusable Workflow Engine',
-    description:
-      'A modular Python toolkit designed for building scalable automation workflows. Includes pre-built modules for email automation, data processing, scheduling, and API integration — architected for extensibility and reuse across projects.',
-    impact: 'Powers 15+ automated workflows with 99.5% uptime reliability.',
-    techStack: ['Python', 'Shell Scripting', 'SMTP', 'Cron', 'REST APIs'],
-    features: [
-      'Plug-and-play automation modules',
-      'Email notification engine with templating',
-      'Scheduled task execution with error recovery',
-      'API integration framework with retry logic',
-      'Comprehensive logging and monitoring',
-    ],
-    github: 'https://github.com/Alexisontheway',
-    demo: null,
-    featured: false,
-    category: 'automation',
-  },
-  {
-  id: 5,
-  title: 'Movie Search Web App',
-  subtitle: 'React Movie Discovery Platform',
-  description:
-    'A responsive movie discovery application built with React that allows users to search, explore, and view detailed information about movies using real-time API integration.',
-
-  impact:
-    'Built a real-time movie search system with API integration, improving user interaction through instant search results and optimized rendering.',
-
-  techStack: ['React', 'JavaScript', 'CSS', 'REST API'],
-
-  features: [
-    'Real-time movie search with API integration',
-    'Dynamic rendering of movie details and posters',
-    'Responsive UI for seamless experience across devices',
-    'Efficient state management using React hooks',
-    'Clean and intuitive user interface design',
-  ],
-
-  github: 'https://github.com/Alexisontheway/movie_website',
-  demo: 'https://69d9cc672ba1e673dc7648fb--iwanttowatch.netlify.app/',
-
-  featured: true,
-  category: 'frontend',
-}
 ];
 
 export const experience = [
   {
     role: 'Technical Intern (AI & Technical Writing Operations)',
     company: 'GAOTek Inc.',
-    location: 'Remote — Kolkata, India',
+    location: 'Remote — New York, USA',
     period: 'August 2025 – November 2025',
     type: 'Internship',
     description:
@@ -257,7 +234,7 @@ export const education = [
   },
   {
     degree: 'Diploma in Engineering',
-    field: 'Computer Science & Technology',
+    field: 'Computer Engineering',
     institution: 'Government Polytechnic Khutri',
     location: 'Khutri, India',
     period: '2021 – 2024',

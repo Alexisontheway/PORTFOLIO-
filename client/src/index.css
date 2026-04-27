@@ -1,126 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 5rem;
-  }
-
-  body {
-    font-family: 'Inter', system-ui, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
-  }
-
-  /* Dark mode defaults */
-  .dark body {
-    background-color: #020617;
-    color: #e2e8f0;
-  }
-
-  /* Light mode */
-  body {
-    background-color: #f8fafc;
-    color: #0f172a;
-  }
-
-  ::selection {
-    background-color: rgba(59, 130, 246, 0.3);
-    color: inherit;
-  }
-
-  /* Custom scrollbar */
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-  ::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  .dark ::-webkit-scrollbar-track {
-    background: #020617;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #3b82f6, #8b5cf6);
-    border-radius: 4px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #2563eb, #7c3aed);
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@layer components {
-  /* Glass card */
-  .glass-card {
-    @apply relative rounded-2xl border transition-all duration-300;
-  }
-  .dark .glass-card {
-    @apply bg-white/[0.03] border-white/[0.06] backdrop-blur-xl;
-  }
-  .glass-card {
-    @apply bg-white/80 border-slate-200/60 backdrop-blur-xl shadow-lg;
-  }
-  .dark .glass-card:hover {
-    @apply bg-white/[0.06] border-white/[0.12];
-  }
-  .glass-card:hover {
-    @apply bg-white border-slate-300/80 shadow-xl;
-  }
+html {
+  scroll-behavior: smooth;
+}
 
-  /* Gradient text */
-  .gradient-text {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, #3b82f6, #8b5cf6, #06b6d4);
-  }
+body {
+  background-color: #0A0A0A;
+  color: #ffffff;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
 
-  /* Glow button */
-  .glow-btn {
-    @apply relative inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium text-white transition-all duration-300;
-    background: linear-gradient(135deg, #3b82f6, #7c3aed);
-  }
-  .glow-btn:hover {
-    @apply shadow-lg transform -translate-y-0.5;
-    box-shadow: 0 0 30px rgba(59, 130, 246, 0.4), 0 0 60px rgba(124, 58, 237, 0.2);
-  }
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+::-webkit-scrollbar-thumb {
+  background: #EAFF00;
+  border-radius: 3px;
+}
 
-  /* Outline button */
-  .outline-btn {
-    @apply relative inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium transition-all duration-300 border;
-  }
-  .dark .outline-btn {
-    @apply text-slate-300 border-white/20 hover:border-primary-400 hover:text-primary-400;
-  }
-  .outline-btn {
-    @apply text-slate-700 border-slate-300 hover:border-primary-500 hover:text-primary-600;
-  }
-
-  /* Section heading */
-  .section-heading {
-    @apply font-heading text-3xl sm:text-4xl lg:text-5xl font-bold mb-4;
-  }
-
-  /* Skill badge */
-  .skill-badge {
-    @apply px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 cursor-default;
-  }
-  .dark .skill-badge {
-    @apply bg-white/[0.05] text-slate-300 border border-white/[0.08] hover:bg-white/[0.1] hover:border-primary-500/30;
-  }
-  .skill-badge {
-    @apply bg-slate-100 text-slate-700 border border-slate-200 hover:bg-primary-50 hover:border-primary-300 hover:text-primary-700;
-  }
+::selection {
+  background: rgba(234, 255, 0, 0.3);
+  color: #EAFF00;
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .text-glow {
+    text-shadow: 0 0 10px rgba(234, 255, 0, 0.5), 0 0 30px rgba(234, 255, 0, 0.2);
+  }
+  .border-glow {
+    box-shadow: 0 0 5px rgba(234, 255, 0, 0.3), inset 0 0 5px rgba(234, 255, 0, 0.1);
+  }
+  .neon-line {
+    background: linear-gradient(90deg, transparent, #EAFF00, transparent);
+    height: 1px;
+  }
+  .neon-dot {
+    width: 6px;
+    height: 6px;
+    background: #EAFF00;
+    border-radius: 50%;
+    box-shadow: 0 0 6px #EAFF00, 0 0 12px rgba(234, 255, 0, 0.4);
+  }
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(234, 255, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(234, 255, 0, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
   }
 }
