@@ -1,26 +1,15 @@
 import {
   Code2,
-  Server,
-  Database,
-  Brain,
-  Cloud,
-  GitBranch,
-  Terminal,
-  Layers,
   Workflow,
-  BarChart3,
-  Shield,
-  Zap,
-  Users,
-  MessageSquare,
-  Target,
   Lightbulb,
+  Brain,
+  Layers,
 } from 'lucide-react';
 
 export const personalInfo = {
   name: 'Priyanshu Pramanik',
-  title: 'Full-Stack Developer & Systems Builder',
-  tagline: 'I build scalable web applications, automation pipelines, and AI-powered tools that solve real problems.',
+  title: 'Full-Stack Developer',
+  tagline: 'Building full-stack systems, automation pipelines, and AI integrations — architecture to deployment.',
   location: 'Kolkata, India',
   email: 'priyanshualex@gmail.com',
   phone: '+91 6204058150',
@@ -32,15 +21,15 @@ export const personalInfo = {
 export const aboutText = {
   headline: 'Engineering solutions that actually work.',
   paragraphs: [
-    "I'm a Computer Science undergraduate with a sharp focus on building end-to-end systems — from pixel-perfect frontends to resilient backends and automated workflows. I don't just write code; I architect solutions that scale.",
-    "My work spans full-stack web development, intelligent data processing, and workflow automation. I've built tools that clean messy datasets, automate lead generation, and streamline repetitive operations — all with a focus on reliability and maintainability.",
-    "I thrive at the intersection of engineering and problem-solving: designing systems that are clean, performant, and production-ready from day one.",
+    "I'm a Computer Science undergraduate focused on building end-to-end systems — from responsive frontends to resilient backends and automated workflows.",
+    "My work spans full-stack web development, intelligent data processing, and workflow automation. I've built tools that clean messy datasets, automate lead generation, and streamline repetitive operations — with a focus on reliability and maintainability.",
+    "I care about systems that are clean, performant, and production-ready — not just functional on localhost.",
   ],
   highlights: [
     { label: 'Projects Built', value: '10+' },
-    { label: 'Tech Stacks', value: '8+' },
-    { label: 'Automation Flows', value: '15+' },
-    { label: 'Lines of Code', value: '50K+' },
+    { label: 'Technologies', value: '8+' },
+    { label: 'Leads Generated Daily', value: '100+' },
+    { label: 'Data Cleaning Time Saved', value: '85%' },
   ],
 };
 
@@ -55,12 +44,11 @@ export const skillCategories = [
       'Python',
       'PostgreSQL / MongoDB',
       'REST API Design',
+      'FastAPI',
       'HTML5 / CSS3 / Tailwind',
       'Git & GitHub',
       'MVC Architecture',
       'Algorithms & Data Structures',
-      'SQL Security',
-      'MS Excel',
     ],
   },
   {
@@ -124,7 +112,7 @@ export const projects = [
     description:
       'A comprehensive task management application built with a modern full-stack architecture. Features real-time updates, priority-based organization, deadline tracking, and a clean dashboard interface designed for daily productivity workflows.',
     impact: 'Designed with scalable MVC architecture handling 1000+ tasks with sub-second response times.',
-    techStack: ['React', 'Node.js', 'Express', 'PostgreSQL', 'REST API', 'JWT Auth'],
+    techStack: ['Node.js', 'Express', 'PostgreSQL', 'Vanilla JS', 'REST API', 'JWT Auth'],
     features: [
       'Priority-based task organization with smart sorting',
       'Real-time status updates and progress tracking',
@@ -144,7 +132,7 @@ export const projects = [
     description:
       'An automated pipeline that ingests raw datasets, identifies inconsistencies, removes duplicates, validates formats, and outputs clean, analysis-ready data. Built to handle messy real-world data at scale with detailed reporting.',
     impact: 'Reduced manual data cleaning time by 85% across datasets with 10K+ records.',
-    techStack: ['Python', 'Pandas', 'NumPy', 'Regex', 'CSV/Excel Processing'],
+    techStack: ['Python', 'FastAPI', 'Pandas', 'NumPy', 'Uvicorn', 'REST API'],
     features: [
       'Automated duplicate detection and removal',
       'Format validation for emails, phones, and dates',
@@ -152,8 +140,8 @@ export const projects = [
       'Structured Excel reports for stakeholder review',
       'Batch processing for large-scale datasets',
     ],
-    github: 'https://github.com/Alexisontheway',
-    demo: null,
+    github: 'https://github.com/Alexisontheway', // TODO: replace with actual repo URL
+    demo: 'https://intelligent-data-cleaning-tool.onrender.com',
     featured: true,
     category: 'automation',
   },
@@ -172,7 +160,7 @@ export const projects = [
       'Natural language query interface',
       'Export-ready intelligence summaries',
     ],
-    github: 'https://github.com/Alexisontheway',
+    github: 'https://github.com/Alexisontheway', // TODO: replace with actual repo URL
     demo: null,
     featured: true,
     category: 'ai',
@@ -181,7 +169,7 @@ export const projects = [
 
 export const experience = [
   {
-    role: 'Technical Intern (AI & Technical Writing Operations)',
+    role: 'Technical Intern — AI & Technical Writing Operations',
     company: 'GAOTek Inc.',
     location: 'Remote — Kolkata, India',
     period: 'August 2025 – November 2025',
@@ -206,7 +194,6 @@ export const certifications = [
     icon: Code2,
     color: 'from-emerald-500 to-cyan-500',
   },
-
   {
     title: "CS50's Introduction to Artificial Intelligence with Python",
     issuer: 'HarvardX (edX)',
@@ -214,7 +201,6 @@ export const certifications = [
     icon: Brain,
     color: 'from-blue-500 to-purple-600',
   },
-  
   {
     title: 'Software Engineering',
     issuer: 'NPTEL (IIT Kharagpur)',
@@ -250,5 +236,6 @@ export const navLinks = [
   { label: 'Skills', href: '#skills' },
   { label: 'Projects', href: '#projects' },
   { label: 'Experience', href: '#experience' },
+  { label: 'Education', href: '#education' },
   { label: 'Contact', href: '#contact' },
 ];
