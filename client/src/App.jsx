@@ -17,16 +17,18 @@ export default function App() {
     <div className="min-h-screen bg-dark-900 grid-bg">
       <ScrollProgress />
       <Navbar />
-      <Suspense fallback={null}>
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Experience />
-        <Education />
-        <Certifications />
-        <Contact />
-      </Suspense>
+     <Suspense fallback={null}>
+  <main>
+    <Hero />
+    <About />
+    <Skills />
+    <Projects />
+    <Experience />
+    <Education />
+    <Certifications />
+    <Contact />
+  </main>
+</Suspense>
       <Footer />
     </div>
   );
